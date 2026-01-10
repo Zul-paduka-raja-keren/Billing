@@ -1,0 +1,43 @@
+<Window ...>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Background="#2c3e50" Padding="20">
+            <TextBlock Text="💰 Billing Warnet Dashboard" 
+                       FontSize="28" 
+                       Foreground="White"/>
+            <TextBlock x:Name="RevenueText" 
+                       Text="Pendapatan Hari Ini: Rp 0" 
+                       FontSize="18" 
+                       Foreground="#2ecc71"
+                       Margin="0,10,0,0"/>
+        </StackPanel>
+        
+        <!-- Client List -->
+        <DataGrid Grid.Row="1" 
+                  x:Name="ClientGrid"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="PC" Binding="{Binding Name}" Width="100"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="100"/>
+                <DataGridTextColumn Header="Waktu Tersisa" Binding="{Binding Remaining}" Width="120"/>
+                <DataGridTextColumn Header="Total Biaya" Binding="{Binding Cost}" Width="120"/>
+                <DataGridTemplateColumn Header="Aksi" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="Start" Click="BtnStart_Click" Margin="5"/>
+                                <Button Content="Pause" Click="BtnPause_Click" Margin="5"/>
+                                <Button Content="+30min" Click="BtnExtend_Click" Margin="5"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
