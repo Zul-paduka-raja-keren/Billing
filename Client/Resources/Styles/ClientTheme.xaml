@@ -1,0 +1,25 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!-- Dark Theme Colors -->
+    <Color x:Key="DarkBg">#1a1a1a</Color>
+    <Color x:Key="DarkPanel">#2c3e50</Color>
+    <Color x:Key="Accent">#00ff00</Color>
+    <Color x:Key="Warning">#ff9900</Color>
+    <Color x:Key="Error">#ff0000</Color>
+    
+    <SolidColorBrush x:Key="DarkBgBrush" Color="{StaticResource DarkBg}"/>
+    <SolidColorBrush x:Key="DarkPanelBrush" Color="{StaticResource DarkPanel}"/>
+    <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource Accent}"/>
+    
+    <!-- Default TextBlock Style -->
+    <Style TargetType="TextBlock">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+    </Style>
+    
+    <!-- Default Window Style -->
+    <Style TargetType="Window">
+        <Setter Property="Background" Value="{StaticResource DarkBgBrush}"/>
+    </Style>
+</ResourceDictionary>

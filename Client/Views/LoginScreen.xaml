@@ -1,0 +1,196 @@
+<Window x:Class="Client.Views.LoginScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Login - Warnet Billing" 
+        Height="500" 
+        Width="400"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Topmost="True">
+    
+    <Window.Resources>
+        <!-- Button Style -->
+        <Style x:Key="ModernButton" TargetType="Button">
+            <Setter Property="Background" Value="#3498db"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="15,10"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="5"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#2980b9"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#95a5a6"/>
+                    <Setter Property="Cursor" Value="Arrow"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+        <!-- TextBox Style -->
+        <Style x:Key="ModernTextBox" TargetType="TextBox">
+            <Setter Property="Background" Value="#34495e"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="15,12"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="5"
+                                Padding="{TemplateBinding Padding}">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <!-- PasswordBox Style -->
+        <Style x:Key="ModernPasswordBox" TargetType="PasswordBox">
+            <Setter Property="Background" Value="#34495e"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="15,12"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="5"
+                                Padding="{TemplateBinding Padding}">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
+    <!-- Main Container -->
+    <Border Background="#1a1a1a" 
+            CornerRadius="15"
+            BorderBrush="#2c3e50"
+            BorderThickness="2">
+        <Border.Effect>
+            <DropShadowEffect Color="Black" 
+                            Direction="0" 
+                            ShadowDepth="0" 
+                            BlurRadius="20" 
+                            Opacity="0.8"/>
+        </Border.Effect>
+        
+        <Grid Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <!-- Header -->
+            <StackPanel Grid.Row="0" Margin="0,0,0,30">
+                <TextBlock Text="🎮" 
+                           FontSize="48" 
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,10"/>
+                
+                <TextBlock Text="WARNET LOGIN" 
+                           FontSize="28" 
+                           FontWeight="Bold"
+                           Foreground="White"
+                           HorizontalAlignment="Center"/>
+                
+                <TextBlock Text="Silakan login untuk melanjutkan" 
+                           FontSize="12" 
+                           Foreground="#95a5a6"
+                           HorizontalAlignment="Center"
+                           Margin="0,5,0,0"/>
+            </StackPanel>
+            
+            <!-- Login Form -->
+            <StackPanel Grid.Row="1" VerticalAlignment="Center">
+                <!-- Username -->
+                <TextBlock Text="Username / No. Member" 
+                           FontSize="12" 
+                           Foreground="#bdc3c7"
+                           Margin="0,0,0,5"/>
+                
+                <TextBox x:Name="UsernameInput"
+                         Style="{StaticResource ModernTextBox}"
+                         Margin="0,0,0,20"
+                         KeyDown="OnKeyDown"/>
+                
+                <!-- Password -->
+                <TextBlock Text="Password (opsional)" 
+                           FontSize="12" 
+                           Foreground="#bdc3c7"
+                           Margin="0,0,0,5"/>
+                
+                <PasswordBox x:Name="PasswordInput"
+                             Style="{StaticResource ModernPasswordBox}"
+                             Margin="0,0,0,20"
+                             KeyDown="OnKeyDown"/>
+                
+                <!-- Guest Mode Checkbox -->
+                <CheckBox x:Name="GuestModeCheckbox"
+                          Content="Login sebagai Guest (tanpa username)"
+                          Foreground="White"
+                          Margin="0,0,0,20"
+                          Checked="OnGuestModeChanged"
+                          Unchecked="OnGuestModeChanged"/>
+                
+                <!-- Login Button -->
+                <Button x:Name="LoginButton"
+                        Content="🔓 LOGIN"
+                        Style="{StaticResource ModernButton}"
+                        Height="45"
+                        Click="OnLoginClick"
+                        IsDefault="True"/>
+                
+                <!-- Status Message -->
+                <TextBlock x:Name="StatusText"
+                           Text=""
+                           FontSize="12"
+                           Foreground="#e74c3c"
+                           HorizontalAlignment="Center"
+                           Margin="0,15,0,0"
+                           TextWrapping="Wrap"
+                           Visibility="Collapsed"/>
+            </StackPanel>
+            
+            <!-- Footer -->
+            <StackPanel Grid.Row="2" Margin="0,20,0,0">
+                <Separator Background="#34495e" Margin="0,0,0,15"/>
+                
+                <TextBlock Text="💡 Tips: Tekan Enter untuk login cepat" 
+                           FontSize="11" 
+                           Foreground="#7f8c8d"
+                           HorizontalAlignment="Center"/>
+                
+                <TextBlock x:Name="ServerStatusText"
+                           Text="🔴 Server: Disconnected" 
+                           FontSize="11" 
+                           Foreground="#e74c3c"
+                           HorizontalAlignment="Center"
+                           Margin="0,5,0,0"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

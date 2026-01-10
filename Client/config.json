@@ -1,0 +1,23 @@
+{
+  "server": {
+    "ip": "192.168.1.100",
+    "port": 9999,
+    "reconnect_interval_seconds": 5
+  },
+  "client": {
+    "name": "PC-01",
+    "auto_start": true,
+    "run_as_admin": false
+  },
+  "features": {
+    "disable_task_manager": false,
+    "disable_registry_editor": false,
+    "block_keyboard_shortcuts": true,
+    "show_timer_overlay": true
+  },
+  "ui": {
+    "theme": "dark",
+    "font_size": 18,
+    "show_warnings": true
+  }
+}

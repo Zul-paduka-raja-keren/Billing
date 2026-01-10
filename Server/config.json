@@ -1,0 +1,29 @@
+{
+  "server": {
+    "port": 9999,
+    "max_clients": 50,
+    "enable_auto_backup": true,
+    "backup_interval_hours": 24
+  },
+  "database": {
+    "path": "Data/billing.db",
+    "backup_path": "Data/Backups/"
+  },
+  "payment": {
+    "midtrans_server_key": "YOUR_MIDTRANS_SERVER_KEY",
+    "midtrans_client_key": "YOUR_MIDTRANS_CLIENT_KEY",
+    "is_production": false,
+    "webhook_url": "https://your-domain.com/webhook/midtrans"
+  },
+  "pricing": {
+    "default_rate_per_hour": 5000,
+    "grace_period_seconds": 30,
+    "warning_time_seconds": 300
+  },
+  "features": {
+    "enable_idle_detection": true,
+    "idle_timeout_minutes": 10,
+    "enable_process_monitor": true,
+    "blacklisted_processes": ["cheatengine", "processhacker"]
+  }
+}
