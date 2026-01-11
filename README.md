@@ -375,7 +375,7 @@ MIT License - Free to use for commercial purposes
 
 - 📧 Email: sandis2320@gmail.com
 - 💬 Discord: [Join Server](https://discord.gg/)
-- 📚 Docs: [Full Documentation]()
+<!-- - 📚 Docs: [Full Documentation](https.www.web.com/) -->
 - 🐛 Issues: [GitHub Issues](https://github.com/Zul-paduka-raja-keren/warnet-billing/issues)
 
 ---
@@ -451,9 +451,9 @@ Scripts\backup-database.bat
 .\Scripts\update-clients.ps1
 ```
 
----
+<!-- ---
 
-<!-- ## 🏆 Success Stories
+## 🏆 Success Stories
 
 > "Warnet billing sangat stabil! Udah jalan 6 bulan tanpa masalah. Revenue naik 30%!"  
 > — **Warnet Gamer Zone, Jakarta**
