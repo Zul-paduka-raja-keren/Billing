@@ -1,0 +1,177 @@
+<Window x:Class="Server.Views.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Pengaturan" 
+        Height="600" 
+        Width="650"
+        WindowStartupLocation="CenterOwner"
+        Background="#1a1a1a">
+    
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="30">
+            <StackPanel>
+                <!-- Header -->
+                <TextBlock Text="⚙️ Pengaturan Sistem" 
+                           FontSize="28" 
+                           FontWeight="Bold"
+                           Foreground="White"
+                           Margin="0,0,0,30"/>
+                
+                <!-- Server Settings -->
+                <Border Background="#2c3e50" 
+                        CornerRadius="8" 
+                        Padding="20"
+                        Margin="0,0,0,15">
+                    <StackPanel>
+                        <TextBlock Text="🖥️ Pengaturan Server" 
+                                   FontSize="18" 
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   Margin="0,0,0,15"/>
+                        
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            
+                            <TextBlock Grid.Row="0" Grid.Column="0" 
+                                       Text="Port:" 
+                                       Foreground="#bdc3c7"
+                                       VerticalAlignment="Center"
+                                       Margin="0,0,0,10"/>
+                            <TextBox Grid.Row="0" Grid.Column="1"
+                                     x:Name="PortInput"
+                                     Text="9999"
+                                     Height="35"
+                                     Background="#34495e"
+                                     Foreground="White"
+                                     Padding="10"
+                                     Margin="0,0,0,10"/>
+                            
+                            <TextBlock Grid.Row="1" Grid.Column="0" 
+                                       Text="Max Clients:" 
+                                       Foreground="#bdc3c7"
+                                       VerticalAlignment="Center"
+                                       Margin="0,0,0,10"/>
+                            <TextBox Grid.Row="1" Grid.Column="1"
+                                     x:Name="MaxClientsInput"
+                                     Text="50"
+                                     Height="35"
+                                     Background="#34495e"
+                                     Foreground="White"
+                                     Padding="10"
+                                     Margin="0,0,0,10"/>
+                            
+                            <TextBlock Grid.Row="2" Grid.Column="0" 
+                                       Text="Auto Backup:" 
+                                       Foreground="#bdc3c7"
+                                       VerticalAlignment="Center"/>
+                            <CheckBox Grid.Row="2" Grid.Column="1"
+                                      x:Name="AutoBackupCheck"
+                                      Content="Enable automatic database backup"
+                                      Foreground="White"
+                                      IsChecked="True"
+                                      VerticalAlignment="Center"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Pricing Settings -->
+                <Border Background="#2c3e50" 
+                        CornerRadius="8" 
+                        Padding="20"
+                        Margin="0,0,0,15">
+                    <StackPanel>
+                        <TextBlock Text="💰 Pengaturan Harga Default" 
+                                   FontSize="18" 
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   Margin="0,0,0,15"/>
+                        
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            
+                            <TextBlock Grid.Row="0" Grid.Column="0" 
+                                       Text="Harga per Jam:" 
+                                       Foreground="#bdc3c7"
+                                       VerticalAlignment="Center"
+                                       Margin="0,0,0,10"/>
+                            <TextBox Grid.Row="0" Grid.Column="1"
+                                     x:Name="DefaultRateInput"
+                                     Text="5000"
+                                     Height="35"
+                                     Background="#34495e"
+                                     Foreground="White"
+                                     Padding="10"
+                                     Margin="0,0,0,10"/>
+                            
+                            <TextBlock Grid.Row="1" Grid.Column="0" 
+                                       Text="Grace Period (detik):" 
+                                       Foreground="#bdc3c7"
+                                       VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="1" Grid.Column="1"
+                                     x:Name="GracePeriodInput"
+                                     Text="30"
+                                     Height="35"
+                                     Background="#34495e"
+                                     Foreground="White"
+                                     Padding="10"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Features -->
+                <Border Background="#2c3e50" 
+                        CornerRadius="8" 
+                        Padding="20"
+                        Margin="0,0,0,15">
+                    <StackPanel>
+                        <TextBlock Text="🎯 Fitur Tambahan" 
+                                   FontSize="18" 
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   Margin="0,0,0,15"/>
+                        
+                        <CheckBox x:Name="IdleDetectionCheck"
+                                  Content="Deteksi idle otomatis"
+                                  Foreground="White"
+                                  IsChecked="True"
+                                  Margin="0,0,0,10"/>
+                        
+                        <CheckBox x:Name="ProcessMonitorCheck"
+                                  Content="Monitor proses terlarang"
+                                  Foreground="White"
+                                  IsChecked="True"
+                                  Margin="0,0,0,10"/>
+                        
+                        <CheckBox x:Name="WebDashboardCheck"
+                                  Content="Enable Web Dashboard"
+                                  Foreground="White"
+                                  IsChecked="False"/>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Save Button -->
+                <Button Content="💾 Simpan Pengaturan"
+                        Height="50"
+                        Background="#2ecc71"
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Click="OnSaveClick"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>
