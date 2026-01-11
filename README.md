@@ -50,7 +50,7 @@
 
 #### 1. **Clone Repository**
 ```bash
-git clone https://github.com/yourusername/warnet-billing.git
+git clone https://github.com/Zul-paduka-raja-keren/warnet-billing.git
 cd warnet-billing
 ```
 
@@ -373,27 +373,27 @@ MIT License - Free to use for commercial purposes
 
 ## 📞 Support
 
-- 📧 Email: support@warnetbilling.com
-- 💬 Discord: [Join Server](https://discord.gg/warnet)
-- 📚 Docs: [Full Documentation](https://docs.warnetbilling.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/warnet-billing/issues)
+- 📧 Email: sandis2320@gmail.com
+- 💬 Discord: [Join Server](https://discord.gg/)
+- 📚 Docs: [Full Documentation]()
+- 🐛 Issues: [GitHub Issues](https://github.com/Zul-paduka-raja-keren/warnet-billing/issues)
 
 ---
 
 ## 🎯 Roadmap
 
 ### v1.1 (Coming Soon)
-- [ ] Auto top-up via saldo
-- [ ] Membership system with discounts
-- [ ] WhatsApp notifications
-- [ ] Game hour tracking
-- [ ] Facial recognition login
+- Auto top-up via saldo
+- Membership system with discounts
+- WhatsApp notifications
+- Game hour tracking
+- Facial recognition login
 
 ### v2.0 (Future)
-- [ ] Multi-location support
-- [ ] Cloud sync
-- [ ] Mobile app (iOS/Android)
-- [ ] Advanced analytics
+- Multi-location support
+- Cloud sync
+- Mobile app (iOS/Android)
+- Advanced analytics
 
 ---
 
@@ -453,13 +453,13 @@ Scripts\backup-database.bat
 
 ---
 
-## 🏆 Success Stories
+<!-- ## 🏆 Success Stories
 
 > "Warnet billing sangat stabil! Udah jalan 6 bulan tanpa masalah. Revenue naik 30%!"  
 > — **Warnet Gamer Zone, Jakarta**
 
 > "Setup cuma 30 menit, langsung bisa dipake. Support payment QRIS juga keren!"  
-> — **Net Corner, Bandung**
+> — **Net Corner, Bandung** -->
 
 ---
 
