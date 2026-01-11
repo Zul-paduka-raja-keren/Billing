@@ -1,0 +1,21 @@
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">@ClientName</h5>
+        <p class="card-text">
+            <strong>Status:</strong> <span class="badge bg-@StatusColor">@Status</span><br />
+            <strong>IP:</strong> @IpAddress<br />
+            <strong>Waktu:</strong> @RemainingTime
+        </p>
+        <button class="btn btn-sm btn-primary">Start</button>
+        <button class="btn btn-sm btn-warning">Pause</button>
+        <button class="btn btn-sm btn-danger">Stop</button>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string ClientName { get; set; } = "";
+    [Parameter] public string Status { get; set; } = "Idle";
+    [Parameter] public string StatusColor { get; set; } = "secondary";
+    [Parameter] public string IpAddress { get; set; } = "";
+    [Parameter] public string RemainingTime { get; set; } = "-";
+}
